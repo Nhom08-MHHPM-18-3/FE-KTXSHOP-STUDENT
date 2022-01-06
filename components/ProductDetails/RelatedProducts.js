@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
 import QuickViewModal from '../Modals/QuickViewModal';
-import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 import SingleProductStyleTwo from '../Common/SingleProductStyleTwo';
-import { addToCart } from '../../store/actions/cartActions';
+
 
 const options = {
     loop: true,
@@ -92,7 +91,7 @@ class RelatedProducts extends Component {
                             className="products-slides owl-carousel owl-theme"
                             {...options}
                         >
-                            {this.state.products.slice(0,6).map((product, idx) => (
+                            {/* {this.state.products.slice(0,6).map((product, idx) => (
                                 <SingleProductStyleTwo 
                                     product={product}
                                     key={idx}
@@ -100,7 +99,7 @@ class RelatedProducts extends Component {
                                     onhandleModalProduct={this.passDataToModal}
                                     ontoggleModal={this.toggleModal}
                                 />
-                            ))}
+                            ))} */}
                     </OwlCarousel> : '' }
                     {/* Quick View Modal */}
                     <QuickViewModal
@@ -113,20 +112,17 @@ class RelatedProducts extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        products: state.products.filter( product => product.type == 'Women Clothes' )
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         //products: state.products.filter( product => product.type == 'Women Clothes' )
+//     }
+// }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addToCart: (id) => { dispatch(addToCart(id)) }
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToCart: (id) => { dispatch(addToCart(id)) }
+//     }
+// }
 
 // export default RelatedProducts;
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(RelatedProducts);
+export default (RelatedProducts);

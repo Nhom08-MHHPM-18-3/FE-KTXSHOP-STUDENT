@@ -9,12 +9,11 @@ class OfferStyleOne extends Component {
                     <div className="row">
                         <div className="col-lg-5 col-md-6">
                             <div className="offer-content">
-                                <span className="sub-title">Limited Time Offer!</span>
-                                <h2>-40% OFF</h2>
-                                <p>Get The Best Deals Now</p>
+                                <span className="sub-title">Ưu đãi đặc biệt vào ngày 12/1</span>
+                                <h2>Miễn phí toàn bộ phí vận chuyển</h2>
 
-                                <Link href="/products-one-row">
-                                    <a className="default-btn">Discover Now</a>
+                                <Link href="">
+                                    <a className="default-btn">Tìm kiếm sản phẩm</a>
                                 </Link>
                             </div>
                         </div>

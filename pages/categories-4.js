@@ -4,7 +4,6 @@ import Navbar from '../components/Layouts/Navbar';
 import PageBanner from '../components/Common/PageBanner';
 import CategoriesFullWidth3Grid from '../components/Categories/CategoriesFullWidth3Grid';
 import FacilitySlider from '../components/Common/FacilitySlider';
-import InstagramFeed from '../components/Common/InstagramFeed';
 import Footer from '../components/Layouts/Footer';
 
 class Categories4 extends Component {
@@ -21,7 +20,6 @@ class Categories4 extends Component {
                 /> 
                 <CategoriesFullWidth3Grid />
                 <FacilitySlider />
-                <InstagramFeed />
                 <Footer />
             </React.Fragment>
         );

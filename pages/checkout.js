@@ -4,7 +4,6 @@ import Navbar from '../components/Layouts/Navbar';
 import PageBanner from '../components/Common/PageBanner';
 import CheckoutContent from '../components/Checkout/CheckoutContent';
 import FacilitySlider from '../components/Common/FacilitySlider';
-import InstagramFeed from '../components/Common/InstagramFeed';
 import Footer from '../components/Layouts/Footer';
 
 class Checkout extends Component {
@@ -21,7 +20,6 @@ class Checkout extends Component {
                 /> 
                 <CheckoutContent /> 
                 <FacilitySlider />
-                <InstagramFeed />
                 <Footer />
             </React.Fragment>
         );

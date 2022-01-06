@@ -3,7 +3,7 @@ import Head from "next/head";
 import GoTop from '../Shared/GoTop';
 
 const Layout = ({children}) => {
-    const [loader, setLoader] = React.useState(true);
+    const [loader, setLoader] = React.useState(false);
 
     React.useEffect(() => {
         setTimeout(() => setLoader(false), 2000);
@@ -12,10 +12,10 @@ const Layout = ({children}) => {
     return(
         <React.Fragment>
             <Head>
-                <title>Livani - React Next eCommerce Template</title>
-                <meta name="description" content="Livani - React Next eCommerce Template. This has been built with React, Next.js, Express.js, and ES6+" />
-                <meta name="og:title" property="og:title" content="Livani - React Next eCommerce Template"></meta>
-                <meta name="twitter:card" content="Livani - React Next eCommerce Template"></meta>
+                <title>KTXShop</title>
+                <meta name="description" content="Nơi buôn bán những mặt hàng cần thiết" />
+                <meta name="og:title" property="og:title" content="KTXShop"></meta>
+                <meta name="twitter:card" content="KTXShop"></meta>
                 <link rel="canonical" href="https://livani-react.envytheme.com/"></link>
                 <meta property="og:image" content="https://demaxin.s3.ap-south-1.amazonaws.com/cd19-2-1589216093113.jpg" />
             </Head>

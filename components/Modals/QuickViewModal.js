@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Link from 'next/link';
-import { addQuantityWithNumber } from '../../store/actions/cartActions';
+// import { addQuantityWithNumber } from '../../store/actions/cartActions';
 import { toast } from 'react-toastify';
 
 class QuickViewModal extends Component {
@@ -21,7 +20,7 @@ class QuickViewModal extends Component {
     }
 
     handleAddToCartFromView = () => {
-        this.props.addQuantityWithNumber(this.props.product.id, this.state.qty); 
+        // this.props.addQuantityWithNumber(this.props.product.id, this.state.qty); 
 
         toast.success('Added to the cart', {
             position: "bottom-left",
@@ -250,13 +249,10 @@ class QuickViewModal extends Component {
     }
 }
 
-const mapDispatchToProps= (dispatch)=>{
-    return {
-        addQuantityWithNumber: (id, qty) => {dispatch(addQuantityWithNumber(id, qty))}
-    }
-}
+// const mapDispatchToProps= (dispatch)=>{
+//     return {
+//         addQuantityWithNumber: (id, qty) => {dispatch(addQuantityWithNumber(id, qty))}
+//     }
+// }
 
-export default connect(
-    null,
-    mapDispatchToProps
-)(QuickViewModal)
+export default (QuickViewModal)

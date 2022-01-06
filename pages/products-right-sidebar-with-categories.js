@@ -5,7 +5,6 @@ import Navbar from '../components/Layouts/Navbar';
 import PageBanner from '../components/Common/PageBanner';
 import ProductsWithRightSidebar from '../components/Shop/ProductsWithRightSidebar';
 import FacilitySlider from '../components/Common/FacilitySlider';
-import InstagramFeed from '../components/Common/InstagramFeed';
 import Footer from '../components/Layouts/Footer';
 import Category from '../components/Common/Category';
 
@@ -25,7 +24,6 @@ const ProductsRightSidebarWithCategories = ({products}) => {
                 <ProductsWithRightSidebar products={products} />
             </section>
             <FacilitySlider />
-            <InstagramFeed />
             <Footer />
         </React.Fragment>
     );

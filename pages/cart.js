@@ -4,7 +4,6 @@ import Navbar from '../components/Layouts/Navbar';
 import PageBanner from '../components/Common/PageBanner';
 import CartTable from '../components/Cart/CartTable';
 import FacilitySlider from '../components/Common/FacilitySlider';
-import InstagramFeed from '../components/Common/InstagramFeed';
 import Footer from '../components/Layouts/Footer';
 
 class Cart extends Component {
@@ -14,14 +13,13 @@ class Cart extends Component {
                <TopHeader />
                 <Navbar />
                 <PageBanner 
-                    pageTitle="Cart" 
+                    pageTitle="Giỏ hàng" 
                     homePageUrl="/" 
-                    homePageText="Home" 
-                    activePageText="Cart" 
+                    homePageText="Trang chủ" 
+                    activePageText="Giỏ hàng" 
                 /> 
                 <CartTable /> 
                 <FacilitySlider />
-                <InstagramFeed />
                 <Footer />
             </React.Fragment>
         );

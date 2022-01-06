@@ -1342,17 +1342,17 @@ Main Banner CSS
 }
 .banner-bg1 {
     background: {
-        image: url(../../../images/main-banner1.jpg);
+        image: url(../../../images/ktx1.jpg);
     };
 }
 .banner-bg2 {
     background: {
-        image: url(../../../images/main-banner2.jpg);
+        image: url(../../../images/ktx2.jpg);
     };
 }
 .banner-bg3 {
     background: {
-        image: url(../../../images/main-banner3.jpg);
+        image: url(../../../images/ktx3.jpg);
     };
 }
 .banner-bg4 {
@@ -1420,16 +1420,17 @@ Main Banner CSS
     }
     h1 {
         margin-bottom: 12px;
+        color: #fff ;
         font: {
-            size: 65px;
+            size: 85px;
             weight: 700;
         };
     }
     p {
-        color: $black-color;
+        color: #fff !important;
         font: {
             weight: 500;
-            size: 17px;
+            size: 30px;
         };
     }
     .btn-box {
@@ -4730,7 +4731,7 @@ Offer CSS
     };
     &.bg-image1 {
         background: {
-            image: url(../../../images/offer-bg.jpg);
+            image: url(https://static.tapchitaichinh.vn/images/upload/vantruongtc/05072021/den-2025-55-dan-so-viet-nam-tham-gia-mua-sam-online1589913588.jpg);
         };
     }
     &.bg-image2 {

@@ -10,23 +10,23 @@ class Footer extends Component {
                     <div className="row">
                         <div className="col-lg-3 col-md-6 col-sm-6">
                             <div className="single-footer-widget">
-                                <h3>About The Store</h3>
+                                <h3>KTXShop</h3>
 
                                 <div className="about-the-store">
-                                    <p>One of the most popular on the web is shopping.</p>
+                                    <p>Buôn bán mọi thứ bạn cần, giao hàng tận nơi</p>
 
                                     <ul className="footer-contact-info">
                                         <li>
                                             <i className='bx bx-map'></i> 
-                                            Wonder Street, USA, New York
+                                            Khu B KTX Đại Học Quốc Gia TPHCM Phường Linh Trung Đông Hòa, Dĩ An, Bình Dương, Việt Nam
                                         </li>
                                         <li>
                                             <i className='bx bx-phone-call'></i> 
-                                            +1-541-754-3010
+                                            +113
                                         </li>
                                         <li>
                                             <i className='bx bx-envelope'></i> 
-                                            hello@livani.com
+                                            nguyenhaanhkiem@gmail.com
                                         </li>
                                     </ul>
                                 </div>
@@ -73,38 +73,33 @@ class Footer extends Component {
 
                         <div className="col-lg-3 col-md-6 col-sm-6">
                             <div className="single-footer-widget pl-4">
-                                <h3>Quick Links</h3>
+                                <h3>Liên hệ</h3>
 
                                 <ul className="quick-links">
                                     <li>
-                                        <Link href="/about">
-                                            <a>About Us</a>
-                                        </Link>
+                                        <a href="https://www.facebook.com/buihoanhao10t2">
+                                            <a>Hảo Perfect</a>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link href="/products-left-sidebar">
-                                            <a>Shop Now!</a>
-                                        </Link>
+                                        <a href="https://www.facebook.com/nguyenhaanhkiem0701">
+                                            <a>Anh Kiểm</a>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link href="/products-left-sidebar-2">
-                                            <a>Woman's</a>
-                                        </Link>
+                                        <a href="https://www.facebook.com/nguyendinhhung29082000">
+                                            <a>Hùng Kaka</a>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link href="/faqs">
-                                            <a>FAQ's</a>
-                                        </Link>
+                                        <a href="https://www.facebook.com/black.Raizel">
+                                            <a>Quốc Nhật</a>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link href="/contact">
-                                            <a>Contact Us</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/customer-service">
-                                            <a>Customer Services</a>
-                                        </Link>
+                                        <a href="https://www.facebook.com/quanphamluong">
+                                            <a>Quân Phạm</a>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -112,38 +107,13 @@ class Footer extends Component {
 
                         <div className="col-lg-3 col-md-6 col-sm-6">
                             <div className="single-footer-widget">
-                                <h3>Customer Support</h3>
+                                <h3>Hỗ trợ khách hàng</h3>
 
                                 <ul className="customer-support">
                                     <li>
-                                        <Link href="/login">
-                                            <a>My Account</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/checkout">
-                                            <a>Checkout</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/cart">
-                                            <a>Cart</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/faqs">
-                                            <a>FAQ's</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/track-order">
-                                            <a>Order Tracking</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/contact">
-                                            <a>Help & Support</a>
-                                        </Link>
+                                        <a href="https://www.facebook.com/buihoanhao10t2">
+                                            <a>Chat với trực tiếp</a>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -151,15 +121,15 @@ class Footer extends Component {
 
                         <div className="col-lg-3 col-md-6 col-sm-6">
                             <div className="single-footer-widget">
-                                <h3>Newsletter</h3>
+                                <h3>Nhận tin mới</h3>
 
                                 <div className="footer-newsletter-box">
-                                    <p>To get the latest news and latest updates from us.</p>
+                                    <p>Nhận thông báo mới nhất về các mặt hàng của chúng tôi</p>
 
                                     <form className="newsletter-form">
-                                        <label>Your E-mail Address:</label>
-                                        <input type="email" className="input-newsletter" placeholder="Enter your email" name="email" required />
-                                        <button type="submit">Subscribe</button>
+                                        <label>Địa chỉ E-mail:</label>
+                                        <input type="email" className="input-newsletter" placeholder="Nhập email của bạn" name="email" required />
+                                        <button type="submit">Đăng ký</button>
                                     </form>
                                 </div>
                             </div>

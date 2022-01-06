@@ -45,48 +45,23 @@ class MainBanner extends Component {
                                     <VisibilitySensor>
                                         {({ isVisible }) => (
                                             <div className="main-banner-content text-center">
-                                                <span
-                                                    className={
-                                                        isVisible ? "sub-title animated fadeInUp opacityOne" : 'opacityZero'
-                                                    }
-                                                >
-                                                    Limited Time Offer!
-                                                </span>
                                                 <h1
                                                     className={
                                                         isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'
                                                     }
                                                 >
-                                                    Winter-Spring!
+                                                   Giá cả ưu đãi
                                                 </h1>
                                                 <p
                                                     className={
                                                         isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'
                                                     }
                                                 >
-                                                    Take 20% Off ‘Sale Must-Haves'
+                                                    Rẻ hơn 10% so với giá thị trường
                                                 </p>
 
                                                 <div className="btn-box">
-                                                    <Link href="/products-left-sidebar">
-                                                        <a 
-                                                            className={
-                                                                `default-btn ${isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'}`
-                                                            }
-                                                        >
-                                                            Shop Women's
-                                                        </a>
-                                                    </Link>
-
-                                                    <Link href="/products-right-sidebar">
-                                                        <a 
-                                                            className={
-                                                                `optional-btn ${isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'}`
-                                                            }
-                                                        >
-                                                            Shop Men's
-                                                        </a>
-                                                    </Link>
+                                                    
                                                 </div>
                                             </div>
                                         )}
@@ -103,49 +78,22 @@ class MainBanner extends Component {
                                     <VisibilitySensor>
                                         {({ isVisible }) => (
                                             <div className="main-banner-content">
-                                                <span
-                                                    className={
-                                                        isVisible ? "sub-title animated fadeInUp slow opacityOne" : 'opacityZero'
-                                                    }
-                                                >
-                                                    Exclusive Offer!
-                                                </span>
                                                 <h1
                                                     className={
                                                         isVisible ? "animated fadeInUp slow opacityOne" : 'opacityZero'
                                                     }
                                                 >
-                                                    Spring-Show!
+                                                    Đảm bảo chất lượng
                                                 </h1>
                                                 <p
                                                     className={
                                                         isVisible ? "animated fadeInUp slow opacityOne" : 'opacityZero'
                                                     }
                                                 >
-                                                    Leap year offer ‘Sale Must-Haves'
+                                                    Rõ ràng nguồn gốc xuất xứ
                                                 </p>
                                                 
-                                                <div className="btn-box">
-                                                    <Link href="/products-left-sidebar">
-                                                        <a 
-                                                            className={
-                                                                `default-btn ${isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'}`
-                                                            }
-                                                        >
-                                                            Shop Women's
-                                                        </a>
-                                                    </Link>
-
-                                                    <Link href="/products-right-sidebar">
-                                                        <a 
-                                                            className={
-                                                                `optional-btn ${isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'}`
-                                                            }
-                                                        >
-                                                            Shop Men's
-                                                        </a>
-                                                    </Link>
-                                                </div>
+                                                
                                             </div>
                                         )}
                                     </VisibilitySensor>
@@ -161,49 +109,21 @@ class MainBanner extends Component {
                                     <VisibilitySensor>
                                         {({ isVisible }) => (
                                             <div className="main-banner-content">
-                                                <span
-                                                    className={
-                                                        isVisible ? "sub-title animated fadeInUp opacityOne" : 'opacityZero'
-                                                    }
-                                                >
-                                                    Buy Now From Livani!
-                                                </span>
                                                 <h1
                                                     className={
                                                         isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'
                                                     }
                                                 >
-                                                    New Season Canvas
+                                                    Tiện lợi và nhanh chóng
                                                 </h1>
                                                 <p
                                                     className={
                                                         isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'
                                                     }
                                                 >
-                                                    Take 20% Off ‘Sale Must-Haves'
+                                                    Giao hàng trong vòng 2 giờ
                                                 </p>
                                                 
-                                                <div className="btn-box">
-                                                    <Link href="/products-left-sidebar">
-                                                        <a 
-                                                            className={
-                                                                `default-btn ${isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'}`
-                                                            }
-                                                        >
-                                                            Shop Women's
-                                                        </a>
-                                                    </Link>
-
-                                                    <Link href="/products-right-sidebar">
-                                                        <a 
-                                                            className={
-                                                                `optional-btn ${isVisible ? "animated fadeInUp opacityOne" : 'opacityZero'}`
-                                                            }
-                                                        >
-                                                            Shop Men's
-                                                        </a>
-                                                    </Link>
-                                                </div>
                                             </div>
                                         )}
                                     </VisibilitySensor>

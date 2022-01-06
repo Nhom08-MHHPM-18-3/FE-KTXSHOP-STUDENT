@@ -2,10 +2,8 @@ import React from 'react';
 import axios from "axios"
 import Router from 'next/router'
 import StripeCheckout from 'react-stripe-checkout';
-import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
-import { resetCart } from '../../store/actions/cartActions';
-import {firebase} from '../../firebase';
+
 
 class Payments extends React.Component {
     onToken = async token => {
@@ -27,20 +25,20 @@ class Payments extends React.Component {
             createdAt: new Date()
         };  
         await axios.post("/api/checkout", body);
-        const db = firebase.firestore();
-        const dbOrderRef = db.collection('orders');
-        dbOrderRef.add(body).then(() => {
-            this.props.resetCart();
-            toast.success('Submitted the order, we will contact you soon.', {
-                position: "bottom-left",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true
-            });
-            setTimeout(() => {Router.push('/')},3000);  
-        });
+        // const db = firebase.firestore();
+        // const dbOrderRef = db.collection('orders');
+        // dbOrderRef.add(body).then(() => {
+        //     this.props.resetCart();
+        //     toast.success('Submitted the order, we will contact you soon.', {
+        //         position: "bottom-left",
+        //         autoClose: 3000,
+        //         hideProgressBar: false,
+        //         closeOnClick: true,
+        //         pauseOnHover: true,
+        //         draggable: true
+        //     });
+        //     setTimeout(() => {Router.push('/')},3000);  
+        // });
     };
 
     render(){
@@ -69,20 +67,5 @@ class Payments extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        products: state.addedItems,
-        total: state.total,
-    }
-}
 
-const mapDispatchToProps= (dispatch)=>{
-    return {
-        resetCart: () => { dispatch(resetCart()) }
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Payments)
+export default (Payments)

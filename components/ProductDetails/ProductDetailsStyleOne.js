@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { connect } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
-import { addToCart, addQuantityWithNumber } from '../../store/actions/cartActions';
 import ProductDetailsTab from './ProductDetailsTab';
 import RelatedProducts from './RelatedProducts';
 import ProductImage from './ProductImage';
@@ -61,31 +59,32 @@ class ProductDetailsStyleOne extends Component {
 
     render() {
         // let { id } = this.props.router.query;
-        let { title, offer, oldPrice, newPrice, imageUrl } = this.props.product;
+        //let { title, offer, oldPrice, newPrice, imageUrl } = this.props.product;
         // console.log()
         // let data = products.filter((product) => product.id == id);
+        const offer = true;
         return (
             <section className="product-details-area pt-100 pb-70">
                 <ToastContainer />
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-5 col-md-12">
-                            <ProductImage imageUrl={imageUrl} />
+                            <ProductImage imageUrl='https://bloganh.net/wp-content/uploads/2021/03/chup-anh-dep-anh-sang-min.jpg' />
                         </div>
 
                         <div className="col-lg-7 col-md-12">
                             <div className="products-details-desc">
-                                <h3>{title}</h3>
+                                <h3>Dế mèn phiêu lưu ký</h3>
 
                                 <div className="price">
                                 {
                                     offer ? (
                                         <React.Fragment>
-                                            <span className="old-price">${oldPrice}</span>
-                                            <span className="new-price">${newPrice}</span>
+                                            <span className="old-price">$100</span>
+                                            <span className="new-price">$99</span>
                                         </React.Fragment>
                                     ) : (
-                                        <span className="new-price">${oldPrice}</span>
+                                        <span className="new-price">$100</span>
                                     )
                                 }
                                 </div>
@@ -191,12 +190,6 @@ class ProductDetailsStyleOne extends Component {
                                 </div>
 
                                 <div className="products-info-btn">
-                                    <Link href="#">
-                                        <a onClick={e => e.preventDefault()} data-toggle="modal" data-target="#sizeGuideModal">
-                                            <i className='bx bx-crop'></i> 
-                                            Size guide
-                                        </a>
-                                    </Link>
 
                                     <Link href="#">
                                         <a onClick={e => e.preventDefault()} data-toggle="modal" data-target="#productsShippingModal">
@@ -205,12 +198,6 @@ class ProductDetailsStyleOne extends Component {
                                         </a>
                                     </Link>
 
-                                    <Link href="/contact">
-                                        <a onClick={e => e.preventDefault()}>
-                                            <i className='bx bx-envelope'></i> 
-                                            Ask about this products
-                                        </a>
-                                    </Link>
                                 </div>
 
                                 <div className="products-add-to-cart">
@@ -243,7 +230,7 @@ class ProductDetailsStyleOne extends Component {
                                         onClick={this.handleAddToCart}
                                     >
                                         <i className="fas fa-cart-plus"></i> 
-                                        Add to Cart
+                                        Thêm vào giỏ
                                     </button>
                                 </div>
 
@@ -251,34 +238,18 @@ class ProductDetailsStyleOne extends Component {
                                     <Link href="#">
                                         <a onClick={e => e.preventDefault()} className="optional-btn">
                                             <i className='bx bx-heart'></i> 
-                                            Add to Wishlist
+                                            Thêm vào danh sách yêu thích
                                         </a>
                                     </Link>
 
-                                    <Link href="#">
-                                        <a onClick={e => e.preventDefault()} className="optional-btn">
-                                            <i className='bx bx-refresh'></i> 
-                                            Add to Compare
-                                        </a>
-                                    </Link>
                                 </div>
 
                                 <div className="buy-checkbox-btn">
-                                    <div className="item">
-                                        <input className="inp-cbx" id="cbx" type="checkbox" />
-                                        <label className="cbx" htmlFor="cbx">
-                                            <span>
-                                                <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                                </svg>
-                                            </span>
-                                            <span>I agree with the terms and conditions</span>
-                                        </label>
-                                    </div>
+                                    
 
                                     <div className="item">
                                         <Link href="#">
-                                            <a onClick={e => e.preventDefault()} className="default-btn">Buy it now!</a>
+                                            <a onClick={e => e.preventDefault()} className="default-btn">Thanh toán ngay</a>
                                         </Link>
                                     </div>
                                 </div>
@@ -297,14 +268,11 @@ class ProductDetailsStyleOne extends Component {
     }
 }
 
-const mapDispatchToProps= (dispatch)=>{
-    return {
-        addQuantityWithNumber: (id, qty) => {dispatch(addQuantityWithNumber(id, qty))},
-        addToCart: (id) => { dispatch(addToCart(id)) }
-    }
-}
+// const mapDispatchToProps= (dispatch)=>{
+//     return {
+//         addQuantityWithNumber: (id, qty) => {dispatch(addQuantityWithNumber(id, qty))},
+//         addToCart: (id) => { dispatch(addToCart(id)) }
+//     }
+// }
 
-export default connect(
-    null,
-    mapDispatchToProps
-)(hookClass);
+export default (hookClass);

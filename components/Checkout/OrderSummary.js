@@ -1,9 +1,69 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import Payment from '../payments/Payment';
-
+const data = [
+    {
+        description: "Long Sleeve Leopard T-Shirt",
+        discount: false,
+        discountOff: 10,
+        id: "5DAcUDDd4t8xWgl9kvXl",
+        imageHoverUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img-hover1-1588704436043.jpg",
+        imageUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img1-1588704428273.jpg",
+        newPrice: 320,
+        newProduct: false,
+        offer: true,
+        oldPrice: 250,
+        onSale: false,
+        title: "Long Sleeve Leopard T-Shirt",
+        type: "T-Shirt"
+    },
+    {
+        description: "Sunnyme Women's Ponchos",
+        discount: false,
+        discountOff: 0,
+        id: "81tgigL0U2zUHoTj85Ht",
+        imageHoverUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img-hover8-1588705468374.jpg",
+        imageUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img8-1588705462376.jpg",
+        newPrice: 200,
+        newProduct: false,
+        offer: true,
+        oldPrice: 210,
+        onSale: true,
+        title: "Sunnyme Women's Ponchos",
+        type: "Women Clothes"
+    },
+    {
+        description: "Women's Modern-Skinny",
+        discount: true,
+        discountOff: 20,
+        id: "9Gkmfo4HjW4tKvMYlpX9",
+        imageHoverUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img-hover12-1588705972392.jpg",
+        imageUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img12-1588705966818.jpg",
+        newPrice: 100,
+        newProduct: false,
+        offer: true,
+        oldPrice: 150,
+        onSale: false,
+        title: "Women's Modern-Skinny",
+        type: "T-Shirt"
+    },
+    {
+        description: "Block Striped Draped",
+        discount: false,
+        discountOff: 0,
+        id: "D9wwa2ZDu281HV5s95b9",
+        imageHoverUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img-hover11-1588705905171.jpg",
+        imageUrl: "https://demaxin.s3.ap-south-1.amazonaws.com/img11-1588705899677.jpg",
+        newPrice: 210,
+        newProduct: false,
+        offer: false,
+        oldPrice: 220,
+        onSale: false,
+        title: "Block Striped Draped",
+        type: "T-Shirt"
+    },
+]
 class CheckoutForm extends Component {
     handleEmptyForm = () => {
         toast.error('Please fillup the form carefully', {
@@ -34,7 +94,7 @@ class CheckoutForm extends Component {
                             </thead>
 
                             <tbody>
-                                {this.props.products.map((data, idx) => (
+                                {data.map((data, idx) => (
                                     <tr key={idx}>
                                         <td className="product-name">
                                             <a href="#">{data.title}</a>
@@ -121,6 +181,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(
-    mapStateToProps
-)(CheckoutForm)
+export default (CheckoutForm)

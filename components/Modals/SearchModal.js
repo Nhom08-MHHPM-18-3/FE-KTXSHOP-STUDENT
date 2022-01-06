@@ -26,7 +26,7 @@ class SearchModal extends Component {
 
                         <div className="search-overlay-form">
                             <form>
-                                <input type="text" className="input-search" placeholder="Search here..." />
+                                <input type="text" className="input-search" placeholder="Tìm kiếm sản phẩm" />
                                 <button type="submit">
                                     <i className='bx bx-search-alt'></i>
                                 </button>

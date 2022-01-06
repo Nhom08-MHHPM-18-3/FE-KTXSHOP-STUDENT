@@ -3,7 +3,6 @@ import TopHeader from '../components/Layouts/TopHeader';
 import Navbar from '../components/Layouts/Navbar';
 import PageBanner from '../components/Common/PageBanner';
 import FacilitySlider from '../components/Common/FacilitySlider';
-import InstagramFeed from '../components/Common/InstagramFeed';
 import Footer from '../components/Layouts/Footer';
 import Link from 'next/link';
 
@@ -58,7 +57,6 @@ class CustomerService extends Component {
                 </section>
  
                 <FacilitySlider />
-                <InstagramFeed />
                 <Footer />
             </React.Fragment>
         );

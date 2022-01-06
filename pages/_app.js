@@ -1,23 +1,22 @@
 import '../styles.scss';
 import React from 'react';
-import { Provider } from 'react-redux';
-import withRedux from 'next-redux-wrapper';
-import { initStore } from '../store/reducers/cartReducer';
+// import withRedux from 'next-redux-wrapper';
+// import { initStore } from '../store/reducers/cartReducer';
 import { ToastContainer } from 'react-toastify';
 import Layout from '../components/_App/Layout';
-import { checkUserLogin, addProducts } from '../store/actions/cartActions';
+// import { checkUserLogin, addProducts } from '../store/actions/cartActions';
 
-const MyApp = ({ Component, pageProps, store }) => {
-    React.useEffect(() => {
-        store.dispatch(checkUserLogin())
-        store.dispatch(addProducts())
-    });
+const MyApp = ({ Component, pageProps}) => {
+    // React.useEffect(() => {
+    //     store.dispatch(checkUserLogin())
+    //     store.dispatch(addProducts())
+    // });
     return (
         <Layout>
             <ToastContainer />
-            <Provider store={store}>
+            {/* <Provider store={store}> */}
                 <Component {...pageProps} />
-            </Provider>
+            {/* </Provider> */}
         </Layout>
     );
 }
@@ -31,4 +30,4 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 };
 
 
-export default withRedux(initStore)(MyApp)
+export default (MyApp)
