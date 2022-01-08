@@ -3,7 +3,7 @@ import Link from '../../utils/ActiveLink';
 import SearchModal from '../Modals/SearchModal';
 import ShoppingCartModal from '../Modals/ShoppingCartModal';
 import SidebarModal from '../Modals/SidebarModal';
-
+import CartContext from '../../contexts/CartContext';
 class Navbar extends Component {
     // Navbar 
     _isMounted = false;
@@ -106,8 +106,11 @@ class Navbar extends Component {
                                                         this.toggleModalCart();
                                                     }}>
                                                         <i className='bx bx-shopping-bag'></i>
-                                                        <span> 2</span>
-                                                        {/* <span>{products.length}</span> */}
+                                                        <CartContext.Consumer >
+                                                            {({ cart }) => (
+                                                                <span>{cart.addedItems.length}</span>
+                                                            )}
+                                                        </CartContext.Consumer>
                                                     </a>
                                                 </Link>
                                             </div>
@@ -126,10 +129,17 @@ class Navbar extends Component {
                 />
 
                 {/* Shopping Cart Modal */}
-                <ShoppingCartModal
-                    onClick={this.toggleModalCart}
-                    active={this.state.ShoppingCartModal ? 'active' : ''}
-                />
+                <CartContext.Consumer >
+                    {({ cart, removeItem }) => (
+                        <ShoppingCartModal
+                            onClick={this.toggleModalCart}
+                            active={this.state.ShoppingCartModal ? 'active' : ''}
+                            products={cart.addedItems}
+                            handleRemove={removeItem}
+                            total={cart.total}
+                        />
+                    )}
+                </CartContext.Consumer>
 
             </React.Fragment>
         );

@@ -78,7 +78,7 @@ class Footer extends Component {
                                 <ul className="quick-links">
                                     <li>
                                         <a href="https://www.facebook.com/buihoanhao10t2">
-                                            <a>Hảo Perfect</a>
+                                            <a>Perfect Bùi</a>
                                         </a>
                                     </li>
                                     <li>

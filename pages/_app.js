@@ -1,23 +1,19 @@
 import '../styles.scss';
 import React from 'react';
-// import withRedux from 'next-redux-wrapper';
-// import { initStore } from '../store/reducers/cartReducer';
 import { ToastContainer } from 'react-toastify';
 import Layout from '../components/_App/Layout';
-// import { checkUserLogin, addProducts } from '../store/actions/cartActions';
+import {CartProvider} from '../components/Cart/CartProvider';
 
-const MyApp = ({ Component, pageProps}) => {
-    // React.useEffect(() => {
-    //     store.dispatch(checkUserLogin())
-    //     store.dispatch(addProducts())
-    // });
+const MyApp = ({ Component, pageProps }) => {
+
     return (
-        <Layout>
-            <ToastContainer />
-            {/* <Provider store={store}> */}
+        <CartProvider>
+            <Layout>
+                <ToastContainer />
                 <Component {...pageProps} />
-            {/* </Provider> */}
-        </Layout>
+            </Layout>
+        </CartProvider>
+
     );
 }
 

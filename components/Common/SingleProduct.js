@@ -6,58 +6,35 @@ class SingleProduct extends Component {
         QuickViewModal: false
     }
 
-    handleAddToCart = (id) => {
-        this.props.onHandleAddToCart(id); 
-    }
-
     toggleModal = () => {
         this.setState({
             QuickViewModal: !this.state.QuickViewModal
         });
-        this.props.ontoggleModal(this.state.QuickViewModal); 
+        this.props.ontoggleModal(this.state.QuickViewModal);
     }
 
     handleModalProduct = (product) => {
-        this.props.onhandleModalProduct(product); 
+        this.props.onhandleModalProduct(product);
     }
-    render(){
-        let {product, styleCls, styleClsTwo} = this.props;
-        return(
+    render() {
+        let { product, styleCls, styleClsTwo, addToCart } = this.props;
+        return (
             <div className={styleCls}>
                 <div className={styleClsTwo || "single-products-box"}>
                     <div className="products-image">
                         <Link href={`/product?id=${product.id}`}>
                             <a>
-                                <img src={product.imageUrl}  className="main-image" alt="image" />
+                                <img src={product.imageUrl} className="main-image" alt="image" />
                                 <img src={product.imageHoverUrl} className="hover-image" alt="image" />
                             </a>
                         </Link>
 
                         <div className="products-button">
                             <ul>
-                                <li>
-                                    <div className="wishlist-btn">
-                                        <Link href="#">
-                                            <a onClick={e => e.preventDefault()}>
-                                                <i className='bx bx-heart'></i>
-                                                <span className="tooltip-label">Add to Wishlist</span>
-                                            </a>
-                                        </Link>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="compare-btn">
-                                        <Link href="#">
-                                            <a onClick={e => e.preventDefault()}>
-                                                <i className='bx bx-refresh'></i>
-                                                <span className="tooltip-label">Compare</span>
-                                            </a>
-                                        </Link>
-                                    </div>
-                                </li>
-                                <li>
+
+                                {/* <li>
                                     <div className="quick-view-btn">
-                                        <Link href="#">
+                                        <Link href={`/product?id=${product.id}`}>
                                             <a 
                                                 onClick={ e => {
                                                     e.preventDefault();
@@ -66,11 +43,11 @@ class SingleProduct extends Component {
                                                 }}
                                             >
                                                 <i className='bx bx-search-alt'></i>
-                                                <span className="tooltip-label">Quick View</span>
+                                                <span className="tooltip-label">Xem nhanh</span>
                                             </a>
                                         </Link>
                                     </div>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
 
@@ -89,7 +66,7 @@ class SingleProduct extends Component {
                     </div>
 
                     <div className="products-content">
-                        <h3><a href={`/products-type-1?id=${product.id}`}>{product.title}</a></h3>
+                        <h3><Link href={`/product?id=${product.id}`}><a>{product.title}</a></Link></h3>
                         <div className="price">
                             {
                                 product.offer ? (
@@ -109,23 +86,23 @@ class SingleProduct extends Component {
                             <i className='bx bxs-star'></i>
                             <i className='bx bxs-star'></i>
                         </div>
-                        <a 
+                        <a
                             className="add-to-cart"
                             onClick={(e) => {
-                                e.preventDefault(); this.handleAddToCart(product.id)
+                                e.preventDefault(); addToCart(product.id);
                             }}
                         >
-                            Add To Cart
+                            Thêm vào giỏ
                         </a>
                         {/* <a href="#" className="add-to-cart">Add to Cart</a> */}
                     </div>
                     {product.discount ? (
                         <span className="products-discount">
                             <span>
-                                {product.discountOff}% OFF
+                                Giảm{product.discountOff}%
                             </span>
                         </span>
-                    ): null}
+                    ) : null}
                 </div>
             </div>
         )

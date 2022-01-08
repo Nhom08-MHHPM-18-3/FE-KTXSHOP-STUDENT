@@ -237,7 +237,7 @@ class QuickViewModal extends Component {
                                     </div>
 
                                     <Link href="#">
-                                        <a className="view-full-info">View Full Info</a>
+                                        <a className="view-full-info">Xem chi ti</a>
                                     </Link>
                                 </div>
                             </div>

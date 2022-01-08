@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import ProductDetailsTab from './ProductDetailsTab';
-import RelatedProducts from './RelatedProducts';
 import ProductImage from './ProductImage';
 
 const hookClass = (props) => {
@@ -261,8 +260,6 @@ class ProductDetailsStyleOne extends Component {
                     <ProductDetailsTab />
                 </div>
 
-                {/* Related Products */}
-                <RelatedProducts />
             </section>
         );
     }
