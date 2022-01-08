@@ -53,7 +53,7 @@ class RecentProducts extends Component {
                         </div>
 
                         <div className="row">
-                            {/* {!!this.state.products.length && this.state.products.map((product, idx) => (
+                            {!!this.state.products.length && this.state.products.map((product, idx) => (
                                 <SingleProduct 
                                     styleCls="col-lg-4 col-sm-6"
                                     product={product}
@@ -61,8 +61,9 @@ class RecentProducts extends Component {
                                     onHandleAddToCart={this.handleAddToCart}
                                     onhandleModalProduct={this.passDataToModal}
                                     ontoggleModal={this.toggleModal}
+                                    addToCart={this.props.addToCart}
                                 />
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                 </section>

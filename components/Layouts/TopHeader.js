@@ -6,16 +6,6 @@ import WishlistModal from '../Modals/WishlistModal';
 
 class TopHeader extends Component {
 
-    state = {
-        WishlistModal: false
-    };
-
-    toggleModalWishlist = () => {
-        this.setState({
-            WishlistModal: !this.state.WishlistModal
-        });
-    }
-
     handleLogout = () => {
         // this.props.userLogout();
         Router.push('/');
@@ -49,14 +39,6 @@ class TopHeader extends Component {
                                         </Link>
                                     </li>
 
-                                    <li>
-                                        <Link href="#toggleModalWishlist">
-                                            <a onClick={this.toggleModalWishlist}>
-                                                <i className='bx bx-heart'></i> Yêu thích
-                                            </a>
-                                        </Link>
-                                    </li>
-
 
                                     <li>
                                         {user ? (
@@ -78,12 +60,6 @@ class TopHeader extends Component {
                         </div>
                     </div>
                 </div>
-
-                {/* Wishlist Modal */}
-                <WishlistModal
-                    onClick={this.toggleModalWishlist}
-                    active={this.state.WishlistModal ? 'active' : ''}
-                />
             </React.Fragment>
         );
     }

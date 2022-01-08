@@ -54,7 +54,7 @@ class PopularProducts extends Component {
                         </div>
 
                         <div className="row">
-                            {/* {!!this.state.products.length && this.state.products.map((product, idx) => (
+                            {!!this.state.products.length && this.state.products.map((product, idx) => (
                                 <SingleProduct 
                                     styleCls="col-lg-4 col-sm-6"
                                     styleClsTwo="products-box"
@@ -64,7 +64,7 @@ class PopularProducts extends Component {
                                     onhandleModalProduct={this.passDataToModal}
                                     ontoggleModal={this.toggleModal}
                                 />
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                 </section>
