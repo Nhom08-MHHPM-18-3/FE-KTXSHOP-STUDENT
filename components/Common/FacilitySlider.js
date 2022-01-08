@@ -55,49 +55,43 @@ class FacilitySlider extends Component {
                             <div className="icon">
                                 <i className='flaticon-tracking'></i>
                             </div>
-                            <h3>Free Shipping Worldwide</h3>
+                            <h3>Giao hàng nhanh chóng</h3>
                         </div>
 
                         <div className="single-facility-box">
                             <div className="icon">
                                 <i className='flaticon-return'></i>
                             </div>
-                            <h3>Easy Return Policy</h3>
+                            <h3>Hoàn tiền dễ dàng</h3>
                         </div>
 
-                        <div className="single-facility-box">
-                            <div className="icon">
-                                <i className='flaticon-shuffle'></i>
-                            </div>
-                            <h3>7 Day Exchange Policy</h3>
-                        </div>
 
                         <div className="single-facility-box">
                             <div className="icon">
                                 <i className='flaticon-sale'></i>
                             </div>
-                            <h3>Weekend Discount Coupon</h3>
+                            <h3>Nhiều ưu đãi đặc biệt</h3>
                         </div>
 
                         <div className="single-facility-box">
                             <div className="icon">
                                 <i className='flaticon-credit-card'></i>
                             </div>
-                            <h3>Secure Payment Methods</h3>
+                            <h3>Thanh toán bảo mật</h3>
                         </div>
 
                         <div className="single-facility-box">
                             <div className="icon">
                                 <i className='flaticon-location'></i>
                             </div>
-                            <h3>Track Your Order</h3>
+                            <h3>Theo dõi đơn hàng của bạn</h3>
                         </div>
 
                         <div className="single-facility-box">
                             <div className="icon">
                                 <i className='flaticon-customer-service'></i>
                             </div>
-                            <h3>24/7 Customer Support</h3>
+                            <h3>Phục vụ 24/7</h3>
                         </div>
                     </OwlCarousel> : ''}
                 </div>

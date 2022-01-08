@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import QuickViewModal from '../Modals/QuickViewModal';
-import { connect } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import SingleProduct from '../Common/SingleProduct';
-import { addToCart } from '../../store/actions/cartActions';
+// import { addToCart } from '../../store/actions/cartActions';
 
 class BestSellingProducts extends Component {
     
@@ -55,7 +54,7 @@ class BestSellingProducts extends Component {
                         </div>
 
                         <div className="row">
-                            {!!this.state.products.length && this.state.products.map((product, idx) => (
+                            {/* {!!this.state.products.length && this.state.products.map((product, idx) => (
                                 <SingleProduct 
                                     styleCls="col-lg-4 col-sm-6"
                                     styleClsTwo="products-box"
@@ -65,7 +64,7 @@ class BestSellingProducts extends Component {
                                     onhandleModalProduct={this.passDataToModal}
                                     ontoggleModal={this.toggleModal}
                                 />
-                            ))}
+                            ))} */}
                         </div>
                     </div>
                 </section>
@@ -80,13 +79,10 @@ class BestSellingProducts extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addToCart: (id) => { dispatch(addToCart(id)) }
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToCart: (id) => { dispatch(addToCart(id)) }
+//     }
+// }
 
-export default connect(
-    null,
-    mapDispatchToProps
-)(BestSellingProducts);
+export default (BestSellingProducts);

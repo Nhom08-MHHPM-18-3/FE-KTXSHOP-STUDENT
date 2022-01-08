@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import QuickViewModal from '../Modals/QuickViewModal';
-import { connect } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import SingleProduct from '../Common/SingleProduct';
-import { addToCart } from '../../store/actions/cartActions';
+// import { addToCart } from '../../store/actions/cartActions';
 class RecentProducts extends Component {
     
     state = {
@@ -45,7 +44,7 @@ class RecentProducts extends Component {
     render() {
         return (
             <React.Fragment>
-                <section className="products-area pb-70">
+                <section className="products-area pt-100 pb-70">
                     <ToastContainer />
                     <div className="container">
                         <div className="section-title">
@@ -54,7 +53,7 @@ class RecentProducts extends Component {
                         </div>
 
                         <div className="row">
-                            {!!this.state.products.length && this.state.products.map((product, idx) => (
+                            {/* {!!this.state.products.length && this.state.products.map((product, idx) => (
                                 <SingleProduct 
                                     styleCls="col-lg-4 col-sm-6"
                                     product={product}
@@ -63,7 +62,7 @@ class RecentProducts extends Component {
                                     onhandleModalProduct={this.passDataToModal}
                                     ontoggleModal={this.toggleModal}
                                 />
-                            ))}
+                            ))} */}
                         </div>
                     </div>
                 </section>
@@ -78,13 +77,10 @@ class RecentProducts extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addToCart: (id) => { dispatch(addToCart(id)) }
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToCart: (id) => { dispatch(addToCart(id)) }
+//     }
+// }
 
-export default connect(
-    null,
-    mapDispatchToProps
-)(RecentProducts);
+export default (RecentProducts);

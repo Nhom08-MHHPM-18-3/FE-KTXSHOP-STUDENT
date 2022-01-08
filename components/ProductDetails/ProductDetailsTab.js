@@ -30,7 +30,7 @@ class ProductDetailsTab extends Component {
                         className="current"
                     >
                         <a href="#">
-                            <div className="dot"></div> Description
+                            <div className="dot"></div> Mô tả
                         </a>
                     </li>
                     
@@ -38,23 +38,7 @@ class ProductDetailsTab extends Component {
                         onClick={(e) => {e.preventDefault(); this.openTabSection(e, 'tab2')}}
                     >
                         <a href="#">
-                            <div className="dot"></div> Additional Information
-                        </a>
-                    </li>
-
-                    <li 
-                        onClick={(e) => {e.preventDefault(); this.openTabSection(e, 'tab3')}}
-                    >
-                        <a href="#">
-                            <div className="dot"></div> Shipping
-                        </a>
-                    </li>
-
-                    <li 
-                        onClick={(e) => {e.preventDefault(); this.openTabSection(e, 'tab4')}}
-                    >
-                        <a href="#">
-                            <div className="dot"></div> Why Buy From Us
+                            <div className="dot"></div> Thông tin thêm
                         </a>
                     </li>
 
@@ -62,7 +46,7 @@ class ProductDetailsTab extends Component {
                         onClick={(e) => {e.preventDefault(); this.openTabSection(e, 'tab5')}}
                     >
                         <a href="#">
-                            <div className="dot"></div> Reviews
+                            <div className="dot"></div> Đánh giá
                         </a>
                     </li>
                 </ul>
@@ -160,15 +144,10 @@ class ProductDetailsTab extends Component {
 
                     <div id="tab4" className="tabs-item">
                         <div className="products-details-tab-content">
-                            <p>Here are 5 more great reasons to buy from us:</p>
+                            <p>Nếu bạn đang tìm kiếm một trang web để mua và bán hàng trực tuyến thì Shopee.vn là một sự lựa chọn tuyệt vời dành cho bạn. Bản chất của Shopee là một social E-commerce platform - nền tảng trang web thương mại điện tử tích hợp mạng xã hội. Điều này cho phép người mua và người bán hàng dễ dàng tương tác, trao đổi thông tin về sản phẩm và chương trình khuyến mãi của shop. Nhờ nền tảng đó, việc mua bán trên Shopee trở nên nhanh chóng và đơn giản hơn. Bạn có thể trò chuyện trực tiếp với nhà bán hàng để hỏi trực tiếp về mặt hàng cần mua. Còn nếu bạn muốn tìm mua những dòng sản phẩm chính hãng, uy tín, Shopee Mall chính là sự lựa chọn lí tưởng dành cho bạn. Để bạn có thể dễ dàng khi tìm hiểu và sử dụng sản phẩm, Shopee Blog - trang blog thông tin chính thức của Shopee - sẽ giúp bạn có thể tìm được cho mình các kiến thức về xu hướng thời trang, review công nghệ, mẹo làm đẹp, tin tức tiêu dùng và deal giá tốt bất ngờ.
 
-                            <ol>
-                                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
-                                <li> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
-                                <li>When an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-                                <li>When an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                            </ol>
+Đến với Shopee, cơ hội để trở thành một nhà bán hàng dễ dàng hơn bao giờ hết. Chỉ với vài thao tác trên ứng dụng, bạn đã có thể đăng bán ngay những sản phẩm của mình. Không những thế, các nhà bán hàng có thể tự tạo chương trình khuyến mãi trên Shopee để thu hút người mua với những sản phẩm có mức giá hấp dẫn. Khi đăng nhập tại Shopee Kênh người bán, bạn có thể dễ dàng phân loại sản phẩm, theo dõi đơn hàng, chăm sóc khách hàng và cập nhập ngay các hoạt động của shop.</p>
+
                         </div>
                     </div>
 

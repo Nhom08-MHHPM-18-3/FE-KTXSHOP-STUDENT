@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
-import { connect } from 'react-redux';
 import TopHeader from '../components/Layouts/TopHeader';
 import Navbar from '../components/Layouts/Navbar';
 import PageBanner from '../components/Common/PageBanner';
 import FacilitySlider from '../components/Common/FacilitySlider';
-import InstagramFeed from '../components/Common/InstagramFeed';
 import Footer from '../components/Layouts/Footer';
-import { userLogin } from '../store/actions/cartActions';
 
 class Login extends Component {
 
@@ -20,14 +17,14 @@ class Login extends Component {
     render() {
         return (
             <React.Fragment>
-               <TopHeader />
+                <TopHeader />
                 <Navbar />
-                <PageBanner 
-                    pageTitle="My Account" 
-                    homePageUrl="/" 
-                    homePageText="Home" 
-                    activePageText="Login" 
-                /> 
+                <PageBanner
+                    pageTitle="My Account"
+                    homePageUrl="/"
+                    homePageText="Home"
+                    activePageText="Login"
+                />
 
                 <section className="login-area ptb-100">
                     <div className="container">
@@ -62,7 +59,7 @@ class Login extends Component {
 
                                     <span>Create an Account</span>
                                     <p>Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
-                    
+
                                     <Link href="/signup">
                                         <a className="optional-btn">Create an Account</a>
                                     </Link>
@@ -73,17 +70,12 @@ class Login extends Component {
                 </section>
 
                 <FacilitySlider />
-                <InstagramFeed />
                 <Footer />
             </React.Fragment>
         );
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        userLogin: () => {dispatch(userLogin())}
-    }
-}
 
-export default connect(null, mapDispatchToProps)(Login)
+
+export default (Login)
