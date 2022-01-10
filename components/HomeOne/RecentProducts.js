@@ -49,19 +49,20 @@ class RecentProducts extends Component {
                     <div className="container">
                         <div className="section-title">
                             <span className="sub-title">See Our Collection</span>
-                            <h2>Recent Products</h2>
+                            <h2>Popular Products</h2>
                         </div>
 
                         <div className="row">
                             {!!this.state.products.length && this.state.products.map((product, idx) => (
                                 <SingleProduct 
                                     styleCls="col-lg-4 col-sm-6"
-                                    product={product}
+                                    styleClsTwo="products-box"
+                                    product={product.attributes}
+                                    id={product.id}
                                     key={idx}
                                     onHandleAddToCart={this.handleAddToCart}
                                     onhandleModalProduct={this.passDataToModal}
                                     ontoggleModal={this.toggleModal}
-                                    addToCart={this.props.addToCart}
                                 />
                             ))}
                         </div>
@@ -78,10 +79,5 @@ class RecentProducts extends Component {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         addToCart: (id) => { dispatch(addToCart(id)) }
-//     }
-// }
 
 export default (RecentProducts);

@@ -12,7 +12,6 @@ class TopHeader extends Component {
     }
 
     render() {
-        const { user } = this.props;
         return (
             <React.Fragment>
                 <div className="top-header">
@@ -31,30 +30,34 @@ class TopHeader extends Component {
 
                             <div className="col-lg-6 col-md-12">
                                 <ul className="header-top-menu">
-                                    <li>
-                                        <Link href="/login">
-                                            <a>
-                                                <i className='bx bxs-user'></i> Tài khoản
-                                            </a>
-                                        </Link>
-                                    </li>
+                                    {this.props.user.login ? (
+                                        <>
+                                            <li>
+                                                <Link href="/login">
+                                                    <a>
+                                                        <i className='bx bxs-user'></i> Tài khoản
+                                                    </a>
+                                                </Link>
+                                            </li>
 
 
-                                    <li>
-                                        {user ? (
-                                            <Link href="#">
-                                                <a onClick={e => { e.preventDefault(); this.handleLogout(); }}>
-                                                    <i className='bx bx-log-in'></i> Đăng xuất
-                                                </a>
-                                            </Link>
-                                        ) : (
+                                            <li>
+                                                <Link href="#">
+                                                    <a onClick={e => { e.preventDefault(); this.handleLogout(); }}>
+                                                        <i className='bx bx-log-in'></i> Đăng xuất
+                                                    </a>
+                                                </Link>
+                                            </li>
+                                        </>
+                                    ) : (
+                                        <li>
                                             <Link href="/login">
                                                 <a>
                                                     <i className='bx bx-log-in'></i> Đăng nhập
                                                 </a>
                                             </Link>
-                                        )}
-                                    </li>
+                                        </li>)
+                                    }
                                 </ul>
                             </div>
                         </div>

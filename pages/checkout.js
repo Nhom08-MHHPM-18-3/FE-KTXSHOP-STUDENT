@@ -6,12 +6,13 @@ import CheckoutContent from '../components/Checkout/CheckoutContent';
 import FacilitySlider from '../components/Common/FacilitySlider';
 import Footer from '../components/Layouts/Footer';
 import CartContext from '../contexts/CartContext';
-
+import { UserContext } from '../contexts/UserContext';
 const Checkout = () => {
  const cart = useContext(CartContext);
+ const user = useContext(UserContext);
     return (
         <React.Fragment>
-            <TopHeader />
+            <TopHeader user={user}/>
             <Navbar />
             <PageBanner
                 pageTitle="Đặt hàng"
