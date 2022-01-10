@@ -17,7 +17,6 @@ class ShoppingCartModal extends Component {
 
 
     render() {
-
         return (
             <React.Fragment>
                 <div className={`shoppingCartModal right ${this.props.active}`}>
@@ -42,7 +41,7 @@ class ShoppingCartModal extends Component {
                                                     <div className="products-image">
                                                         <Link href="#">
                                                             <a>
-                                                                <img src={product.imageUrl} alt="image" />
+                                                                <img src={`${process.env.API_HOST}${product.product.attributes.Image.data[0].attributes.url}`} alt="image" />
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -50,14 +49,14 @@ class ShoppingCartModal extends Component {
                                                     <div className="products-content">
                                                         <h3>
                                                             <Link href={`/product?id=${product.id}`}>
-                                                                <a>{product.title}</a>
+                                                                <a>{product.product.attributes.ProductName}</a>
                                                             </Link>
                                                         </h3>
 
                                                         <div className="products-price">
-                                                            <span>{product.quantity}</span>
+                                                            <span>{product.attributes.Quantity}</span>
                                                             <span>x</span>
-                                                            <span className="price">${product.newPrice}</span>
+                                                            <span className="price">{Intl.NumberFormat().format(product.attributes.UnitCost)}</span>
                                                         </div>
 
                                                         <Link href="#">
@@ -80,7 +79,7 @@ class ShoppingCartModal extends Component {
                             }
                             <div className="products-cart-subtotal">
                                 <span>Tổng tiền</span>
-                                <span className="subtotal">${this.props.total}</span>
+                                <span className="subtotal">{Intl.NumberFormat().format(this.props.total)}</span>
                             </div>
 
                             <div className="products-cart-btn">

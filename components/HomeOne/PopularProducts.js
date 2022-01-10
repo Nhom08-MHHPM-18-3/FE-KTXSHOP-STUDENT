@@ -58,7 +58,8 @@ class PopularProducts extends Component {
                                 <SingleProduct 
                                     styleCls="col-lg-4 col-sm-6"
                                     styleClsTwo="products-box"
-                                    product={product}
+                                    product={product.attributes}
+                                    id={product.id}
                                     key={idx}
                                     onHandleAddToCart={this.handleAddToCart}
                                     onhandleModalProduct={this.passDataToModal}
@@ -79,10 +80,5 @@ class PopularProducts extends Component {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         addToCart: (id) => { dispatch(addToCart(id)) }
-//     }
-// }
 
 export default (PopularProducts);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext, useEffect } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import TopHeader from '../components/Layouts/TopHeader';
@@ -6,76 +6,110 @@ import Navbar from '../components/Layouts/Navbar';
 import PageBanner from '../components/Common/PageBanner';
 import FacilitySlider from '../components/Common/FacilitySlider';
 import Footer from '../components/Layouts/Footer';
-
-class Login extends Component {
-
-    handleLogin = (e) => {
+import Swal from 'sweetalert2';
+import { UserContext } from '../contexts/UserContext';
+const Login = () => {
+    const user = useContext(UserContext);
+    console.log(user);
+    useEffect(() => {
+        if (user.login === true) {
+            Router.push('/')
+        }
+    }, [user.login])
+    const handleLogin = async (e) => {
         e.preventDefault();
-        this.props.userLogin();
-        Router.push('/');
+        const account = {
+            username: e.target.elements.username.value,
+            password: e.target.elements.password.value,
+        }
+        let data;
+        const qs = require('qs');
+        const query = qs.stringify({
+            filters: {
+                UserName: {
+                    $eq: account.username,
+                },
+            },
+        }, {
+            encodeValuesOnly: true,
+        });
+        await fetch(process.env.API_HOST + `/api/accounts?${query}`)
+            .then(response => response.json())
+            .then(res => {
+                if (res.data && res.data[0] && res.data[0].attributes) {
+                    data = res.data[0];
+                }
+            });
+        if (!data) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Đăng nhập không thành công',
+                text: 'Username hoặc password không hợp lệ',
+            });
+
+            return;
+        }
+        user.userLogin(data);
     }
-    render() {
-        return (
-            <React.Fragment>
-                <TopHeader />
-                <Navbar />
-                <PageBanner
-                    pageTitle="My Account"
-                    homePageUrl="/"
-                    homePageText="Home"
-                    activePageText="Login"
-                />
+    return (
+        <React.Fragment>
+            <TopHeader user={user} />
+            <Navbar />
+            <PageBanner
+                pageTitle="Tài khoản"
+                homePageUrl="/"
+                homePageText="Trang chủ"
+                activePageText="Đăng nhập"
+            />
 
-                <section className="login-area ptb-100">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6 col-md-6">
-                                <div className="login-content">
-                                    <h2>Login</h2>
+            <section className="login-area ptb-100">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6 col-md-6">
+                            <div className="login-content">
+                                <h2>Đăng nhập</h2>
 
-                                    <form onSubmit={this.handleLogin} className="login-form">
-                                        <div className="form-group">
-                                            <input type="email" className="form-control" placeholder="demo@example.com" />
-                                        </div>
+                                <form onSubmit={handleLogin} className="login-form">
+                                    <div className="form-group">
+                                        <input type="username" className="form-control" placeholder="Nhập username" name="username" />
+                                    </div>
 
-                                        <div className="form-group">
-                                            <input type="password" className="form-control" placeholder="demo" />
-                                        </div>
+                                    <div className="form-group">
+                                        <input type="password" className="form-control" placeholder="Nhập password" name="password" />
+                                    </div>
 
-                                        <button type="submit" className="default-btn">Login</button>
+                                    <button type="submit" className="default-btn">Đăng nhập</button>
 
-                                        <div className="text-center">
-                                            <Link href="/forgot-password">
-                                                <a className="forgot-password">Lost your password?</a>
-                                            </Link>
-                                        </div>
-                                    </form>
-                                </div>
+                                    <div className="text-center">
+                                        <Link href="/forgot-password">
+                                            <a className="forgot-password">Quên mật khẩu?</a>
+                                        </Link>
+                                    </div>
+                                </form>
                             </div>
+                        </div>
 
-                            <div className="col-lg-6 col-md-6">
-                                <div className="new-customer-content">
-                                    <h2>New Customer</h2>
+                        <div className="col-lg-6 col-md-6">
+                            <div className="new-customer-content">
+                                <h2>Khách hàng mới</h2>
 
-                                    <span>Create an Account</span>
-                                    <p>Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
+                                <span>Tạo tài khoản mới</span>
+                                <p>Tạo tài khoản mới để tiến hành mua sản phẩm một cách dễ dàng</p>
 
-                                    <Link href="/signup">
-                                        <a className="optional-btn">Create an Account</a>
-                                    </Link>
-                                </div>
+                                <Link href="/signup">
+                                    <a className="optional-btn">Tạo tài khoản mới</a>
+                                </Link>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <FacilitySlider />
-                <Footer />
-            </React.Fragment>
-        );
-    }
+            <FacilitySlider />
+            <Footer />
+        </React.Fragment>
+    );
 }
 
 
-
-export default (Login)
+export default (Login);

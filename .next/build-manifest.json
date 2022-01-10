@@ -24,15 +24,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/cart": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/checkout": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/product": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

@@ -58,7 +58,8 @@ class BestSellingProducts extends Component {
                                 <SingleProduct 
                                     styleCls="col-lg-4 col-sm-6"
                                     styleClsTwo="products-box"
-                                    product={product}
+                                    product={product.attributes}
+                                    id={product.id}
                                     key={idx}
                                     onHandleAddToCart={this.handleAddToCart}
                                     onhandleModalProduct={this.passDataToModal}

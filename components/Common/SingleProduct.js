@@ -17,15 +17,15 @@ class SingleProduct extends Component {
         this.props.onhandleModalProduct(product);
     }
     render() {
-        let { product, styleCls, styleClsTwo, addToCart } = this.props;
+        let { product, styleCls, styleClsTwo, addToCart, id } = this.props;
         return (
             <div className={styleCls}>
                 <div className={styleClsTwo || "single-products-box"}>
                     <div className="products-image">
-                        <Link href={`/product?id=${product.id}`}>
+                        <Link href={`/product?id=${id}`}>
                             <a>
-                                <img src={product.imageUrl} className="main-image" alt="image" />
-                                <img src={product.imageHoverUrl} className="hover-image" alt="image" />
+                                <img src={`${process.env.API_HOST}${product.Image.data[0].attributes.url}`} className="main-image" alt="image" />
+                                <img src={`${process.env.API_HOST}${product.Image.data[0].attributes.url}`} className="hover-image" alt="image" />
                             </a>
                         </Link>
 
@@ -66,16 +66,16 @@ class SingleProduct extends Component {
                     </div>
 
                     <div className="products-content">
-                        <h3><Link href={`/product?id=${product.id}`}><a>{product.title}</a></Link></h3>
+                        <h3><Link href={`/product?id=${product.id}`}><a>{product.ProductName}</a></Link></h3>
                         <div className="price">
                             {
                                 product.offer ? (
                                     <React.Fragment>
-                                        <span className="old-price">${product.oldPrice}</span>
-                                        <span className="new-price">${product.newPrice}</span>
+                                        <span className="old-price">{product.oldPrice} đ</span>
+                                        <span className="new-price">{product.Price} đ</span>
                                     </React.Fragment>
                                 ) : (
-                                    <span className="new-price">${product.oldPrice}</span>
+                                    <span className="new-price">{Intl.NumberFormat().format(product.Price)} đ</span>
                                 )
                             }
                         </div>
@@ -89,12 +89,11 @@ class SingleProduct extends Component {
                         <a
                             className="add-to-cart"
                             onClick={(e) => {
-                                e.preventDefault(); addToCart(product.id);
+                                e.preventDefault(); addToCart(id,1);
                             }}
                         >
                             Thêm vào giỏ
                         </a>
-                        {/* <a href="#" className="add-to-cart">Add to Cart</a> */}
                     </div>
                     {product.discount ? (
                         <span className="products-discount">
