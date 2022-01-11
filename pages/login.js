@@ -30,6 +30,7 @@ const Login = () => {
                     $eq: account.username,
                 },
             },
+            populate: '*'
         }, {
             encodeValuesOnly: true,
         });
@@ -37,7 +38,10 @@ const Login = () => {
             .then(response => response.json())
             .then(res => {
                 if (res.data && res.data[0] && res.data[0].attributes) {
-                    data = res.data[0];
+                    if (res.data[0].attributes.Password === account.password) {
+                        data = res.data[0];
+                    }
+
                 }
             });
         if (!data) {
@@ -96,7 +100,7 @@ const Login = () => {
                                 <span>Tạo tài khoản mới</span>
                                 <p>Tạo tài khoản mới để tiến hành mua sản phẩm một cách dễ dàng</p>
 
-                                <Link href="/signup">
+                                <Link href="/register">
                                     <a className="optional-btn">Tạo tài khoản mới</a>
                                 </Link>
                             </div>

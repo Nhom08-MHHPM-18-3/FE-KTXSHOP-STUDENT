@@ -7,7 +7,7 @@ import WishlistModal from '../Modals/WishlistModal';
 class TopHeader extends Component {
 
     handleLogout = () => {
-        // this.props.userLogout();
+        this.props.user. userLogout();
         Router.push('/');
     }
 

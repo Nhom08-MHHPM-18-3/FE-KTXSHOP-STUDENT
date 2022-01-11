@@ -37,7 +37,7 @@ class CartTable extends Component {
                                                         <td className="product-thumbnail">
                                                             <Link href={`/product?id=${data.id}`}>
                                                                 <a >
-                                                                    <img src={`${process.env.API_HOST}${data.product.attributes.Image.data[0].attributes.url}`} alt="item" />
+                                                                    <img src={`${data.product.attributes.imageUrl}`} alt="item" />
                                                                 </a>
                                                             </Link>
                                                         </td>

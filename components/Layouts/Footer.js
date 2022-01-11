@@ -140,7 +140,7 @@ class Footer extends Component {
                         <div className="row align-items-center">
                             <div className="col-lg-6 col-md-6">
                                 <p>
-                                    Copyright <i className='bx bx-copyright'></i>{currentYear} Livani Designed By <a href="https://envytheme.com/" target="_blank">EnvyTheme</a> - All rights reserved.
+                                    Copyright <i className='bx bx-copyright'></i>{currentYear} Designed By <a href="" target="_blank">KTXShop</a> - All rights reserved.
                                 </p>
                             </div>
 
