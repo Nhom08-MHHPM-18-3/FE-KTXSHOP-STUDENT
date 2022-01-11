@@ -54,7 +54,7 @@ class ProductDetailsTab extends Component {
                 <div className="tab-content">
                     <div id="tab1" className="tabs-item">
                         <div className="products-details-tab-content">
-                            <p>{this.props.product.Desciption}</p>
+                            <p>{this.props.product.description}</p>
 
                         </div>
                     </div>
