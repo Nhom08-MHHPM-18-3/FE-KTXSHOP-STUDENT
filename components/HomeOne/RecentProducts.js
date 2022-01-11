@@ -23,9 +23,9 @@ class RecentProducts extends Component {
         });
     }
 
-    handleAddToCart = (id) => {
-        this.props.addToCart(id); 
-        toast.success('Added to the cart', {
+    handleAddToCart = (id,quantity) => {
+        this.props.addToCart(id, quantity); 
+        toast.success('Thêm vào giỏ hàng thành công', {
             position: "bottom-left",
             autoClose: 5000,
             hideProgressBar: false,
@@ -48,8 +48,7 @@ class RecentProducts extends Component {
                     <ToastContainer />
                     <div className="container">
                         <div className="section-title">
-                            <span className="sub-title">See Our Collection</span>
-                            <h2>Popular Products</h2>
+                            <h2>Sản phẩm mới</h2>
                         </div>
 
                         <div className="row">

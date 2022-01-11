@@ -19,19 +19,14 @@ const cartReducer = (state, action) => {
     if (action.type === 'INIT_CART') {
         let productsArray = [];
         productsArray = action.payload;
-        // console.log(action.payload)
         let newTotal = 0;
-        // for (let i = 0; i < productsArray.length; i++) {
-        //     newTotal += productsArray[i].attributes.Price;
-        // }
         const temp = action.payload;
         let cart = [];
         for (let i = 0; i < action.payload.length; i++) {
-            const product = state.products.find(item => item.id === temp[i].attributes.AccountID);
+            const product = state.products.find(item => item.id === temp[i].attributes.ProductID);
             newTotal += temp[i].attributes.Subtotal;
             cart.push({ ...temp[i], product })
         }
-        console.log(cart)
         return {
             ...state,
             addedItems: cart,
@@ -40,25 +35,15 @@ const cartReducer = (state, action) => {
     }
 
     if (action.type === 'ADD_TO_CART') {
-        let addedItem = state.products.find(item => item.id === action.id)
-        //check if the action id exists in the addedItems
-        // let existed_item = state.addedItems.find(item => action.id === item.id)
-        // if (existed_item) {
-        //     addedItem.quantity += 1
-        //     return {
-        //         ...state,
-        //         total: state.total + addedItem.newPrice
-        //     }
-        // } else {
-        //     addedItem.quantity = 1;
-        //calculating the total
-        const jwt = localStorage.getItem('jwt-ktxshop');
-        handleAddToCart(addedItem, Number(jwt), action.quanity);
-        let newTotal = state.total + addedItem.newPrice
+        const product = action.product;
+        console.log(product)
+        const cart = state.addedItems
+        cart.push({ ...action.data, product })
+        let newTotal = state.total + action.product.attributes.Price*action.quantity;
 
         return {
             ...state,
-            addedItems: [...state.addedItems, addedItem],
+            addedItems: cart,
             total: newTotal
         }
     }
@@ -89,11 +74,15 @@ const cartReducer = (state, action) => {
 
 
     if (action.type === 'REMOVE_ITEM') {
+        
+        fetch(process.env.API_HOST + `/api/shopping-carts/${action.id}`, {
+            method: 'DELETE',
+        })
         let itemToRemove = state.addedItems.find(item => action.id === item.id)
         let new_items = state.addedItems.filter(item => action.id !== item.id)
 
         //calculating the total
-        let newTotal = state.total - (itemToRemove.newPrice * itemToRemove.quantity);
+        let newTotal = state.total - itemToRemove.attributes.Subtotal;
 
         return {
             ...state,
@@ -161,28 +150,7 @@ const cartReducer = (state, action) => {
         return state
     }
 }
-const handleAddToCart = async (product, accountID, quantity) => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json")
-    await fetch(process.env.API_HOST + '/api/shopping-carts', {
-        method: 'POST',
-        body: JSON.stringify({
-            data: {
-                accountID: accountID,
-                ProductID: product.id,
-                Quantity: quantity || 1,
-                UnitCost: product.attributes.Price,
-                Subtotal: product.attributes.Price,
-            }
-        }),
-        headers: myHeaders
-    })
-        .then(response => response.json())
-        .then(result => {
 
-        })
-
-}
 
 export const CartProvider = ({ children }) => {
     const [data, setData] = useState([]);
@@ -197,8 +165,30 @@ export const CartProvider = ({ children }) => {
     const removeItem = (id) => {
         dispatchCart({ type: 'REMOVE_ITEM', id: id })
     }
-    const addToCart = (id, quantity) => {
-        dispatchCart({ type: 'ADD_TO_CART', id: id, quanity: quantity })
+    const addToCart = async (id, quantity) => {
+        let product = cart.products.find(item => item.id === id)
+        const jwt = localStorage.getItem('jwt-ktxshop');
+
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json")
+        await fetch(process.env.API_HOST + '/api/shopping-carts', {
+            method: 'POST',
+            body: JSON.stringify({
+                data: {
+                    AccountID: jwt,
+                    ProductID: product.id,
+                    Quantity: quantity || 1,
+                    UnitCost: product.attributes.Price,
+                    Subtotal: product.attributes.Price*quantity,
+                }
+            }),
+            headers: myHeaders
+        })
+            .then(response => response.json())
+            .then(result => {
+                dispatchCart({ type: 'ADD_TO_CART', data: result.data, product: product, quantity: quantity })
+            })
+
     }
     const addQuantity = (id) => {
         dispatchCart({ type: 'ADD_QUANTITY', id: id })

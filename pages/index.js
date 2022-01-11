@@ -47,9 +47,9 @@ const Index = () => {
             <MainBanner />
             <RecentProducts products={data} addToCart={cart.addToCart} />
             <OfferStyleOne />
-            <PopularProducts products={data} />
+            <PopularProducts products={data} addToCart={cart.addToCart}/>
             <FacilitySlider />
-            <BestSellingProducts products={data} />
+            <BestSellingProducts products={data} addToCart={cart.addToCart}/>
             <Footer />
         </React.Fragment>
     );

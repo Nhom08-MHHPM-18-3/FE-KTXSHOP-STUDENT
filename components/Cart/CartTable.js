@@ -11,6 +11,7 @@ class CartTable extends Component {
     }
 
     render() {
+        console.log(this.props.cart.cart.addedItems);
         return (
             <section className="cart-area ptb-100">
                 <div className="container">
@@ -36,25 +37,26 @@ class CartTable extends Component {
                                                         <td className="product-thumbnail">
                                                             <Link href={`/product?id=${data.id}`}>
                                                                 <a >
-                                                                    <img src={data.imageUrl} alt="item" />
+                                                                    <img src={`${process.env.API_HOST}${data.product.attributes.Image.data[0].attributes.url}`} alt="item" />
                                                                 </a>
                                                             </Link>
                                                         </td>
 
                                                         <td className="product-name">
-                                                            <Link href={`/product?id=${data.id}`}>
+                                                            <Link href={`/product?id=${data.product.id}`}>
                                                                 <a >
-                                                                    {data.title}
+                                                                    {data.product.attributes.ProductName}
                                                                 </a>
                                                             </Link>
                                                         </td>
 
                                                         <td className="product-price">
-                                                            <span className="unit-amount">${data.newPrice}</span>
+                                                            <span className="unit-amount">{Intl.NumberFormat().format(data.attributes.UnitCost)} đ</span>
                                                         </td>
 
                                                         <td className="product-quantity">
-                                                            <div className="input-counter">
+                                                            <span className="unit-amount">{data.attributes.Quantity}</span>
+                                                            {/* <div className="input-counter">
                                                                 <span
                                                                     className="minus-btn"
                                                                     onClick={() => { this.props.cart.subQuantity(data.id) }}
@@ -75,11 +77,11 @@ class CartTable extends Component {
                                                                 >
                                                                     <i className='bx bx-plus'></i>
                                                                 </span>
-                                                            </div>
+                                                            </div> */}
                                                         </td>
 
                                                         <td className="product-subtotal">
-                                                            <span className="subtotal-amount">{data.newPrice * data.quantity} đ</span>
+                                                            <span className="subtotal-amount">{Intl.NumberFormat().format(data.attributes.Subtotal)} đ</span>
 
                                                             <Link href="#">
                                                                 <a className="remove" onClick={(e) => { e.preventDefault(); this.props.cart.removeItem(data.id) }}>
@@ -114,7 +116,7 @@ class CartTable extends Component {
                                         <h3>Tổng số giỏ hàng</h3>
 
                                         <ul>
-                                            <li>Tổng tiền<span>{(this.props.cart.cart.total + 30).toFixed(2)} đ</span></li>
+                                            <li>Tổng tiền<span>{Intl.NumberFormat().format(this.props.cart.cart.total)} đ</span></li>
                                         </ul>
 
                                         <Link href="/checkout">
