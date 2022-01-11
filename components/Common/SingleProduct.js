@@ -25,8 +25,8 @@ class SingleProduct extends Component {
                     <div className="products-image">
                         <Link href={`/product/${id}`}>
                             <a>
-                                <img src={`${process.env.API_HOST}${product.Image.data[0].attributes.url}`} className="main-image" alt="image" />
-                                <img src={`${process.env.API_HOST}${product.Image.data[0].attributes.url}`} className="hover-image" alt="image" />
+                                <img src={`${product.imageUrl}`} className="main-image" alt="image" />
+                                <img src={`${product.imageUrl}`} className="hover-image" alt="image" />
                             </a>
                         </Link>
 

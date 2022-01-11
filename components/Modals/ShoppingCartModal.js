@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import CartContext from '../../Contexts/CartContext';
-// import { removeItem } from '../../store/actions/cartActions';
+const imageStyle = {
+    height: '55px',
+    width: '55px',
+};
+
 
 class ShoppingCartModal extends Component {
 
@@ -41,7 +45,7 @@ class ShoppingCartModal extends Component {
                                                     <div className="products-image">
                                                         <Link href={`/product/${product.product.id}`}>
                                                             <a>
-                                                                <img src={`${process.env.API_HOST}${product.product.attributes.Image.data[0].attributes.url}`} alt="image" />
+                                                                <img style={imageStyle} src={`${product.product.attributes.imageUrl}`} alt="image" />
                                                             </a>
                                                         </Link>
                                                     </div>

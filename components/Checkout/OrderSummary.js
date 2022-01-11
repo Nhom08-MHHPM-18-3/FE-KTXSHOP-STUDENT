@@ -15,7 +15,6 @@ class CheckoutForm extends Component {
     }
     
     render() {
-        let totalAmount = (this.props.total + this.props.shipping).toFixed(2)
         let { disabled,stateData } = this.props;
         return (
             <div className="col-lg-6 col-md-12">

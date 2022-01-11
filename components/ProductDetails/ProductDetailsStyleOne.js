@@ -64,7 +64,7 @@ class ProductDetailsStyleOne extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-5 col-md-12">
-                            {this.props.product.Image == undefined ? <ProductImage imageUrl={`${process.env.API_HOST}`} /> :<ProductImage imageUrl={`${process.env.API_HOST}${this.props.product.Image.data[0].attributes.url}`} />}
+                            {this.props.product.Image == undefined ? <ProductImage imageUrl={`${process.env.API_HOST}`} /> :<ProductImage imageUrl={`${this.props.product.imageUrl}`} />}
                             
                         </div>
 

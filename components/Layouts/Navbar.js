@@ -54,7 +54,6 @@ class Navbar extends Component {
 
     render() {
 
-        const { products } = this.props;
         const { collapsed } = this.state;
         const classNameOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
         const classNameTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
@@ -146,10 +145,5 @@ class Navbar extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        // products: state.addedItems
-    }
-}
 
 export default (Navbar);
