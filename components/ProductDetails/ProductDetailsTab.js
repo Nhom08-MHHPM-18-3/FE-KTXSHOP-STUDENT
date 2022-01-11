@@ -34,7 +34,7 @@ class ProductDetailsTab extends Component {
                         </a>
                     </li>
                     
-                    <li 
+                    {/* <li 
                         onClick={(e) => {e.preventDefault(); this.openTabSection(e, 'tab2')}}
                     >
                         <a href="#">
@@ -48,31 +48,14 @@ class ProductDetailsTab extends Component {
                         <a href="#">
                             <div className="dot"></div> Đánh giá
                         </a>
-                    </li>
+                    </li> */}
                 </ul>
 
                 <div className="tab-content">
                     <div id="tab1" className="tabs-item">
                         <div className="products-details-tab-content">
-                            <p>Design inspiration lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum.  Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Nulla libero. Vivamus pharetra posuere sapien.</p>
+                            <p>{this.props.product.Desciption}</p>
 
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6">
-                                    <ul>
-                                        <li>Fabric 1: 100% Polyester</li>
-                                        <li>Fabric 2: 100% Polyester, Lining: 100% Polyester</li>
-                                        <li>Fabric 3: 75% Polyester, 20% Viscose, 5% Elastane</li>
-                                    </ul>
-                                </div>
-
-                                <div className="col-lg-6 col-md-6">
-                                    <ol>
-                                        <li>Fabric 3: 75% Polyester, 20% Viscose, 5% Elastane</li>
-                                        <li>Fabric 2: 100% Polyester, Lining: 100% Polyester</li>
-                                        <li>Fabric 1: 100% Polyester</li>
-                                    </ol>
-                                </div>
-                            </div>
                         </div>
                     </div>
 

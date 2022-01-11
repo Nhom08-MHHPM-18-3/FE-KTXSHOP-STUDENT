@@ -11,9 +11,9 @@ const CheckoutContent = ({ cart }) => {
     const stateSchema = {
         fullName: { value: "", error: "" },
         address: { value: "", error: "" },
-        wards: { value: "", error: "" },
-        district: { value: "", error: "" },
-        city: { value: "", error: "" },
+        // wards: { value: "", error: "" },
+        // district: { value: "", error: "" },
+        // city: { value: "", error: "" },
         phone: { value: "", error: "" }
     };
 
@@ -31,24 +31,24 @@ const CheckoutContent = ({ cart }) => {
                 error: "Vui lòng điền địa chỉ"
             }
         },
-        wards: {
-            required: true,
-            validator: {
-                error: "Vui lòng nhập xã/ phường"
-            }
-        },
-        district: {
-            required: true,
-            validator: {
-                error: "Vui lòng nhập quận/ huyện"
-            }
-        },
-        city: {
-            required: true,
-            validator: {
-                error: "Vui lòng nhập tỉnh/ thành phố"
-            }
-        },
+        // wards: {
+        //     required: true,
+        //     validator: {
+        //         error: "Vui lòng nhập xã/ phường"
+        //     }
+        // },
+        // district: {
+        //     required: true,
+        //     validator: {
+        //         error: "Vui lòng nhập quận/ huyện"
+        //     }
+        // },
+        // city: {
+        //     required: true,
+        //     validator: {
+        //         error: "Vui lòng nhập tỉnh/ thành phố"
+        //     }
+        // },
 
 
         // email: {
@@ -119,20 +119,20 @@ const CheckoutContent = ({ cart }) => {
 
                                     <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
-                                            <label>Số nhà/ đường/ tòa / khu kí túc xá<span className="required">*</span></label>
+                                            <label>Địa chỉ giao hàng<span className="required">*</span></label>
                                             <input
                                                 type="text"
                                                 name="address"
                                                 className="form-control"
                                                 onChange={handleOnChange}
-                                                placeholder="Ex: tòa D5 KTX khu B"
+                                                placeholder="Ex: tòa D5 KTX khu B, DHQG TPHCM"
                                                 value={state.address.value}
                                             />
                                             {state.address.error && <p style={errorStyle}>{state.address.error}</p>}
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12 col-md-6">
+                                    {/* <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
                                             <label>Xã/ Phường<span className="required">*</span></label>
                                             <input
@@ -174,7 +174,7 @@ const CheckoutContent = ({ cart }) => {
                                             />
                                             {state.city.error && <p style={errorStyle}>{state.city.error}</p>}
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
                                             <label>Số điện thoại <span className="required">*</span></label>
@@ -190,15 +190,15 @@ const CheckoutContent = ({ cart }) => {
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12 col-md-12">
+                                    {/* <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
                                             <textarea name="notes" id="notes" cols="30" rows="4" placeholder="Ghi chú với đơn hàng" className="form-control"></textarea>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
-                        <OrderSummary disabled={disable} stateData={cart} />
+                        <OrderSummary disabled={disable} stateData={cart} stateSchema={state} />
                     </div>
                 </form>
             </div>

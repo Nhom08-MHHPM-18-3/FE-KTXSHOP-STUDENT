@@ -28,9 +28,9 @@ class ShoppingCartModal extends Component {
                         </button>
 
                         <div className="modal-body">
-                        {this.props.products && this.props.products.length !== 0 ?
-                            <h3>Giỏ hàng của tôi ({this.props.products.length})</h3> :
-                            <h3>Giỏ hàng của tôi (0)</h3>}
+                            {this.props.products && this.props.products.length !== 0 ?
+                                <h3>Giỏ hàng của tôi ({this.props.products.length})</h3> :
+                                <h3>Giỏ hàng của tôi (0)</h3>}
 
                             {this.props.products && this.props.products.length !== 0 ?
                                 (
@@ -39,7 +39,7 @@ class ShoppingCartModal extends Component {
                                             <div className="products-cart-content" key={idx}>
                                                 <div className="products-cart">
                                                     <div className="products-image">
-                                                        <Link href="#">
+                                                        <Link href={`/product/${product.product.id}`}>
                                                             <a>
                                                                 <img src={`${process.env.API_HOST}${product.product.attributes.Image.data[0].attributes.url}`} alt="image" />
                                                             </a>
@@ -48,7 +48,7 @@ class ShoppingCartModal extends Component {
 
                                                     <div className="products-content">
                                                         <h3>
-                                                            <Link href={`/product?id=${product.id}`}>
+                                                            <Link href={`/product/${product.product.id}`}>
                                                                 <a>{product.product.attributes.ProductName}</a>
                                                             </Link>
                                                         </h3>
@@ -100,17 +100,6 @@ class ShoppingCartModal extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        // products: state.addedItems,
-        // total: state.total
-    }
-}
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         removeItem: (id) => {dispatch(removeItem(id))}
-//     }
-// }
 
 export default (ShoppingCartModal)

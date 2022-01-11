@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Payment from '../payments/Payment';
 class CheckoutForm extends Component {
     handleEmptyForm = () => {
-        toast.error('Please fillup the form carefully', {
+        toast.error('Vui lòng điền đầy đủ thông tin', {
             position: "bottom-left",
             autoClose: 5000,
             hideProgressBar: false,
@@ -36,13 +36,13 @@ class CheckoutForm extends Component {
                                 {stateData.cart.addedItems.map((data, idx) => (
                                     <tr key={idx}>
                                         <td className="product-name">
-                                            <a href="#">{data.title}</a>
+                                            <a href="#">{data.product.attributes.ProductName}</a>
                                         </td>
                                         <td className="product-total">
-                                            <span className="subtotal-amount">{data.quantity}</span>
+                                            <span className="subtotal-amount">{data.attributes.Quantity}</span>
                                         </td>
                                         <td className="product-total">
-                                            <span className="subtotal-amount">${data.newPrice * data.quantity}</span>
+                                            <span className="subtotal-amount">{Intl.NumberFormat().format(data.attributes.Subtotal)} đ</span>
                                         </td>
                                     </tr>
                                 ))}
@@ -53,7 +53,7 @@ class CheckoutForm extends Component {
                                     </td>
                                     <td></td>
                                     <td className="order-subtotal-price">
-                                        <span className="order-subtotal-amount">{stateData.cart.total} đ</span>
+                                        <span className="order-subtotal-amount">{Intl.NumberFormat().format(stateData.cart.total)} đ</span>
                                     </td>
                                 </tr>
 
@@ -72,7 +72,7 @@ class CheckoutForm extends Component {
                                     </td>
                                     <td></td>
                                     <td className="product-subtotal">
-                                        <span className="subtotal-amount">{stateData.cart.total} đ</span>
+                                        <span className="subtotal-amount">{Intl.NumberFormat().format(stateData.cart.total)} đ</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -96,13 +96,13 @@ class CheckoutForm extends Component {
                                             e.preventDefault();
                                             this.handleEmptyForm();
                                         }}
-                                    >Đặt hàng</a>
+                                    >Vui lòng điền đầy đủ thông tin</a>
                                 </Link>
                             ) : (
                                 <Payment 
-                                    amount={totalAmount * 100}
                                     userData={this.props.stateData}
                                     disabled={disabled}
+                                    stateSchema={this.props.stateSchema}
                                 />
                             )
                         }
