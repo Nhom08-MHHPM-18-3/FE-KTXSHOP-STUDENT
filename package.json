@@ -1,14 +1,14 @@
 {
-  "name": "livani-react",
+  "name": "next-react",
   "version": "1.2.0",
-  "description": "Livani - React Next eCommerce Template",
+  "description": "nextjs-reactjs",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "author": "EnvyTheme.com",
+  "author": "ktxshop",
   "license": "ISC",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.10.2",

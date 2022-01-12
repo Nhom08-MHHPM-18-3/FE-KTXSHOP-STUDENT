@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import QuickViewModal from '../Modals/QuickViewModal';
 import { ToastContainer, toast } from 'react-toastify';
 import SingleProduct from '../Common/SingleProduct';
-// import { addToCart } from '../../store/actions/cartActions';
 
 class PopularProducts extends Component {
     
@@ -49,8 +48,7 @@ class PopularProducts extends Component {
                     <ToastContainer />
                     <div className="container">
                         <div className="section-title">
-                            <span className="sub-title">See Our Collection</span>
-                            <h2>Popular Products</h2>
+                            <h2>Sản phẩm phổ biến</h2>
                         </div>
 
                         <div className="row">
