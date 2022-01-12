@@ -18,7 +18,7 @@ const Register = () => {
             method: 'POST',
             body: JSON.stringify({
                 data: {
-                    UserName: e.target.elements.username.value,
+                    PhoneNumber: e.target.elements.phoneNumber.value,
                     Password: e.target.elements.password.value,
                 }
             }),
@@ -60,12 +60,12 @@ const Register = () => {
                         <form onSubmit={(e) => handleRegister(e)} className="signup-form">
 
                             <div className="form-group">
-                                <label>Username</label>
-                                <input type="text" className="form-control" id="username" name="username" />
+                                <label>Số điện thoại</label>
+                                <input type="text" className="form-control" id="phoneNumber" name="phoneNumber" />
                             </div>
 
                             <div className="form-group">
-                                <label>Password</label>
+                                <label>Mật khẩu</label>
                                 <input type="password" className="form-control" id="password" name="password" />
                             </div>
 

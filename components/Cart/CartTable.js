@@ -35,7 +35,7 @@ class CartTable extends Component {
                                                 return (
                                                     <tr key={idx}>
                                                         <td className="product-thumbnail">
-                                                            <Link href={`/product?id=${data.id}`}>
+                                                            <Link href={`/product/${data.id}`}>
                                                                 <a >
                                                                     <img src={`${data.product.attributes.imageUrl}`} alt="item" />
                                                                 </a>

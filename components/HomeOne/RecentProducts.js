@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import QuickViewModal from '../Modals/QuickViewModal';
 import { ToastContainer, toast } from 'react-toastify';
 import SingleProduct from '../Common/SingleProduct';
-// import { addToCart } from '../../store/actions/cartActions';
+
 class RecentProducts extends Component {
     
     state = {

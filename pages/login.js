@@ -19,15 +19,15 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         const account = {
-            username: e.target.elements.username.value,
+            phoneNumber: e.target.elements.phoneNumber.value,
             password: e.target.elements.password.value,
         }
         let data;
         const qs = require('qs');
         const query = qs.stringify({
             filters: {
-                UserName: {
-                    $eq: account.username,
+                PhoneNumber: {
+                    $eq: account.phoneNumber,
                 },
             },
             populate: '*'
@@ -48,7 +48,7 @@ const Login = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Đăng nhập không thành công',
-                text: 'Username hoặc password không hợp lệ',
+                text: 'Số điện thoại hoặc password không hợp lệ',
             });
 
             return;
@@ -75,7 +75,7 @@ const Login = () => {
 
                                 <form onSubmit={handleLogin} className="login-form">
                                     <div className="form-group">
-                                        <input type="username" className="form-control" placeholder="Nhập username" name="username" />
+                                        <input type="username" className="form-control" placeholder="Nhập số điện thoại" name="phoneNumber" />
                                     </div>
 
                                     <div className="form-group">
